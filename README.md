@@ -10,7 +10,14 @@ This project presents a predictive model on student recall of English language v
 * **Feature Engineering:**
     * **Logarithmic Transformations:** Applied `delta_log` to normalize the "delta" feature, addressing extreme right-skewness and outliers in the time-gap data.
     * **History Success Rate:** Developed a `history_success_rate` feature (ratio of successful past reviews to total sightings) to compress practice history into a bounded range.
+
+![Feature Importance](feature_importance.png)
+*ANOVA F-Test scores isolating the most predictive numerical features prior to model training.* 
+      
 * **Class Imbalance Mitigation:** Addressed a success bias where 83.7% of traces were successful recalls. This was managed using **Balanced Class Weights** to penalize misclassifications of the minority (Forgot) class.
+
+![Class Imbalance](class_imbalance.png)
+*The baseline distribution showing the 83.7% success bias that required algorithmic weighting.*
 
 ---
 
@@ -37,6 +44,9 @@ Selected for its ability to capture non-linear nuances discovered during explora
 ---
 
 ## Results
+
+![Memory Decay](memory_decay.png)
+*Visualizing the core spacing effect: Recall success rates visibly drop as the time gap (`delta`) increases.*
 
 * **Baseline Performance:** Logistic Regression achieved 84.1% test accuracy but failed to identify nearly every case where a student forgot a word.
 * **Tuned Random Forest:** The optimized model was significantly more effective, proactively identifying nearly **40% of all memory failures**.

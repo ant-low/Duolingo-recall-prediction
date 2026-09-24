@@ -50,7 +50,15 @@ Selected for its ability to capture non-linear nuances discovered during explora
 ## Results
 
 * **Baseline Performance:** Logistic Regression achieved 84.1% test accuracy but failed to identify nearly every case where a student forgot a word.
+<p>
+<img src="logistic_regression.png" alt="Logistic Regression" width="300"/><br>
+</p>
+
 * **Tuned Random Forest:** The optimized model was significantly more effective, proactively identifying nearly **40% of all memory failures**.
+<p>
+<img src="tuned_random_forest.png" alt="Tuned Random Forest" width="280"/><br>
+</p>
+
 * **Generalization:** By tuning tree depth to 12, the gap between training and testing accuracy was closed, ensuring the model's ability to generalize to unseen data.
 
 ---
